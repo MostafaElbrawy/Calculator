@@ -92,36 +92,35 @@ void Modulus() {
 		cout << "The result of modulus= " << intNumber1 % intNumber2 << endl;
 
 }
-
-
-char AnotherOperation() {
+bool AnotherOperation() {
 
 	char again;
 	do {
 		cout << "\nAnother operation? (Y/N) : ";
 		cin >> again;
 
-		if (again == 'y' || again == 'Y')
-			system("cls");
+		if (again == 'y' || again == 'Y') {
+		system("cls");
+		return true;
+	}
 
-		else if(again !='n' && again != 'N')
+		else if (again == 'n' || again == 'N') {
+			cout << "\nHave a good day :) \n";
+			exit(0);
+		}
 
+		else
 			cout << "\nWrong choice, please choose (Y/N)\n";
 
+	} while (true);
 
-	} while (again != 'y' && again != 'Y' && again != 'n' && again != 'N');
-
-	return again;
+	
 
 }
 
+void Caclculator(){
 
-void StartCalculator() {
-
-	char again;
-
-	cout << "WELCOME TO YOUR CALCULATOR :-)\n";
-	cout << "********************************************\n";
+	
 	do {
 
 		switch (ReadOperation()) {
@@ -156,17 +155,28 @@ void StartCalculator() {
 			exit(0);
 
 		default:
-			cout << "\nWrong choice\n";
+			system("cls");
+			cout << "Wrong choice\n";
 			cout << "Please choose from the list \n";
+			Caclculator();
 		}
 
-		again = AnotherOperation();
-
-	} while (again == 'y' || again == 'Y');
+		 
 
 
+	} while (AnotherOperation());
 
-	cout << "\nHave a good day :) \n";
+}
+
+
+void StartCalculator() {
+
+	bool again;
+
+	cout << "WELCOME TO YOUR CALCULATOR :-)\n";
+	cout << "********************************************\n";
+	
+	Caclculator();
 
 
 }
