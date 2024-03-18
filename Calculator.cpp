@@ -3,6 +3,7 @@ using namespace std;
 
 enum enOperation { addition = 1, subtraction = 2, multiplication = 3, division = 4, modulus = 5, Exit = 6 };
 
+
 void ReadNumbers(double& number1, double& number2) {
 
 	cout << "Enter number1 : ";
@@ -11,6 +12,7 @@ void ReadNumbers(double& number1, double& number2) {
 	cin >> number2;
 
 }
+
 
 enOperation ReadOperation() {
 
@@ -28,6 +30,7 @@ enOperation ReadOperation() {
 	return enOperation(operation);
 
 }
+
 
 void Addition() {
 
@@ -92,6 +95,8 @@ void Modulus() {
 		cout << "The result of modulus= " << intNumber1 % intNumber2 << endl;
 
 }
+
+
 bool AnotherOperation() {
 
 	char again;
@@ -117,6 +122,7 @@ bool AnotherOperation() {
 	
 
 }
+
 
 void Caclculator(){
 
@@ -161,8 +167,7 @@ void Caclculator(){
 			Caclculator();
 		}
 
-		 
-
+	
 
 	} while (AnotherOperation());
 
@@ -171,13 +176,10 @@ void Caclculator(){
 
 void StartCalculator() {
 
-	bool again;
-
 	cout << "WELCOME TO YOUR CALCULATOR :-)\n";
 	cout << "********************************************\n";
 	
 	Caclculator();
-
 
 }
 
